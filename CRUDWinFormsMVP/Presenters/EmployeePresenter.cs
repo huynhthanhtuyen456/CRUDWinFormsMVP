@@ -28,11 +28,11 @@ namespace CRUDWinFormsMVP.Presenters
             //Subscribe event handler methods to view events
             this.view.SearchEvent += SearchCustomer;
             this.view.AddNewEvent += AddNewPet;
-            this.view.EditEvent += LoadSelectedPetToEdit;
-            this.view.DeleteEvent += DeleteSelectedCustomer;
-            this.view.SaveEvent += SavePet;
+            this.view.EditEvent += LoadSelectedEmployeeToEdit;
+            this.view.DeleteEvent += DeleteSelectedEmployee;
+            this.view.SaveEvent += SaveEmployee;
             this.view.CancelEvent += CancelAction;
-            //Set customers bindind source
+            //Set customers binding source
             this.view.SetEmployeeListBindingSource(employeesBindingSource);
             //Load customer list view
             LoadAllEmployeeList();
@@ -58,7 +58,7 @@ namespace CRUDWinFormsMVP.Presenters
         {
             view.IsEdit = false;
         }
-        private void LoadSelectedPetToEdit(object sender, EventArgs e)
+        private void LoadSelectedEmployeeToEdit(object sender, EventArgs e)
         {
             DataGridViewEmployeeModel employee = (DataGridViewEmployeeModel)employeesBindingSource.Current;
             view.EmployeeId = employee.Id.ToString();
@@ -70,7 +70,7 @@ namespace CRUDWinFormsMVP.Presenters
             view.EmployeeEducation = educationVal;
             view.IsEdit = true;
         }
-        private void SavePet(object sender, EventArgs e)
+        private void SaveEmployee(object sender, EventArgs e)
         {
             var model = new EmployeeModel();
             model.Id = Convert.ToInt32(view.EmployeeId);
@@ -84,12 +84,12 @@ namespace CRUDWinFormsMVP.Presenters
                 if (view.IsEdit)//Edit model
                 {
                     repository.Edit(model);
-                    view.Message = "Employee edited successfuly";
+                    view.Message = "Employee edited successfully";
                 }
                 else //Add new model
                 {
                     repository.Add(model);
-                    view.Message = "Employee added sucessfully";
+                    view.Message = "Employee added successfully";
                 }
                 view.IsSuccessful = true;
                 LoadAllEmployeeList();
@@ -115,7 +115,7 @@ namespace CRUDWinFormsMVP.Presenters
         {
             CleanviewFields();
         }
-        private void DeleteSelectedCustomer(object sender, EventArgs e)
+        private void DeleteSelectedEmployee(object sender, EventArgs e)
         {
             try
             {

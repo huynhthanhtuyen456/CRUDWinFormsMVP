@@ -32,7 +32,7 @@ namespace CRUDWinFormsMVP.Presenters
 
         private void ShowEmployeesView(object sender, EventArgs e)
         {
-            IEmployeeView view = EmployeeView.GetInstace((MainView)mainView);
+            IEmployeeView view = EmployeeView.GetInstance((MainView)mainView);
             IEmployeeRepository repository = new EmployeeRepository(sqlConnectionString);
             new EmployeePresenter(view, repository);
         }

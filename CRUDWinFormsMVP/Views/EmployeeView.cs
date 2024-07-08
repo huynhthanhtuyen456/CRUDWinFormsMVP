@@ -26,10 +26,10 @@ namespace CRUDWinFormsMVP.Views
         public EmployeeView()
         {
             InitializeComponent();
-            this.comboBoxEducation.DataSource = Enum.GetValues(typeof(EducationEnum));
-            this.comboBoxGender.DataSource = Enum.GetValues(typeof(GenderEnum));
+            this.ComboBoxEducation.DataSource = Enum.GetValues(typeof(EducationEnum));
+            this.ComboBoxGender.DataSource = Enum.GetValues(typeof(GenderEnum));
             AssociateAndRaiseViewEvents();
-            EmployeeTabControl.TabPages.Remove(tabPagePetDetail);
+            EmployeeTabControl.TabPages.Remove(TabPageEmployeeDetail);
             btnClose.Click += delegate { this.Close(); };
         }
 
@@ -46,35 +46,35 @@ namespace CRUDWinFormsMVP.Views
             btnAddNew.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                EmployeeTabControl.TabPages.Remove(tabPagePetList);
-                EmployeeTabControl.TabPages.Add(tabPagePetDetail);
-                tabPagePetDetail.Text = "Add Employee";
+                EmployeeTabControl.TabPages.Remove(TabPageEmployeeList);
+                EmployeeTabControl.TabPages.Add(TabPageEmployeeDetail);
+                TabPageEmployeeDetail.Text = "Add Employee";
             };
             //Edit
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                EmployeeTabControl.TabPages.Remove(tabPagePetList);
-                EmployeeTabControl.TabPages.Add(tabPagePetDetail);
-                tabPagePetDetail.Text = "Edit Employee";
+                EmployeeTabControl.TabPages.Remove(TabPageEmployeeList);
+                EmployeeTabControl.TabPages.Add(TabPageEmployeeDetail);
+                TabPageEmployeeDetail.Text = "Edit Employee";
             };
             //Save changes
-            btnSave.Click += delegate
+            BtnSave.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    EmployeeTabControl.TabPages.Remove(tabPagePetDetail);
-                    EmployeeTabControl.TabPages.Add(tabPagePetList);
+                    EmployeeTabControl.TabPages.Remove(TabPageEmployeeDetail);
+                    EmployeeTabControl.TabPages.Add(TabPageEmployeeList);
                 }
                 MessageBox.Show(Message);
             };
             //Cancel
-            btnCancel.Click += delegate
+            BtnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                EmployeeTabControl.TabPages.Remove(tabPagePetDetail);
-                EmployeeTabControl.TabPages.Add(tabPagePetList);
+                EmployeeTabControl.TabPages.Remove(TabPageEmployeeDetail);
+                EmployeeTabControl.TabPages.Add(TabPageEmployeeList);
             };
             //Delete
             btnDelete.Click += delegate
@@ -92,32 +92,32 @@ namespace CRUDWinFormsMVP.Views
         //Properties
         public string EmployeeId
         {
-            get { return txtCustomerId.Text; }
-            set { txtCustomerId.Text = value; }
+            get { return TxtEmployeeId.Text; }
+            set { TxtEmployeeId.Text = value; }
         }
 
         public string EmployeeName
         {
-            get { return txtCustomerName.Text; }
-            set { txtCustomerName.Text = value; }
+            get { return TxtEmployeeName.Text; }
+            set { TxtEmployeeName.Text = value; }
         }
 
         public DateTime EmployeeDateOfBirth
         {
-            get { return dtpCustomerDOB.Value; }
-            set { dtpCustomerDOB.Value = value; }
+            get { return DtpEmployeeDOB.Value; }
+            set { DtpEmployeeDOB.Value = value; }
         }
 
         public int EmployeeGender
         {
-            get { return comboBoxGender.SelectedIndex; }
-            set { comboBoxGender.SelectedIndex = value; }
+            get { return ComboBoxGender.SelectedIndex; }
+            set { ComboBoxGender.SelectedIndex = value; }
         }
 
         public int EmployeeEducation
         {
-            get { return comboBoxEducation.SelectedIndex; }
-            set { comboBoxEducation.SelectedIndex = value; }
+            get { return ComboBoxEducation.SelectedIndex; }
+            set { ComboBoxEducation.SelectedIndex = value; }
         }
 
         public string SearchValue
@@ -153,14 +153,14 @@ namespace CRUDWinFormsMVP.Views
         public event EventHandler CancelEvent;
 
         //Methods
-        public void SetEmployeeListBindingSource(BindingSource customerList)
+        public void SetEmployeeListBindingSource(BindingSource employeeList)
         {
-            dataGridView.DataSource = customerList;
+            dataGridView.DataSource = employeeList;
         }
 
         //Singleton pattern (Open a single form instance)
         private static EmployeeView instance;
-        public static EmployeeView GetInstace(Form parentContainer)
+        public static EmployeeView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
@@ -189,20 +189,20 @@ namespace CRUDWinFormsMVP.Views
             return true && nameRegex.IsMatch(name);
         }
 
-        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        private void TxtEmployeeName_TextChanged(object sender, EventArgs e)
         {
             this.LblNameMsgError.Text = string.Empty;
-            if (!this.IsValidName(this.txtCustomerName.Text))
+            if (!this.IsValidName(this.TxtEmployeeName.Text))
             {
                 this.LblNameMsgError.Text = "Only accepting alphabet!";
                 this.LblNameMsgError.ForeColor = Color.Red;
-                this.btnSave.Enabled = false;
+                this.BtnSave.Enabled = false;
                 return;
             }
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            this.txtCustomerName.Text = textInfo.ToTitleCase(this.txtCustomerName.Text);
-            this.txtCustomerName.Select(this.txtCustomerName.Text.Length, this.txtCustomerName.Text.Length - 1);
-            this.btnSave.Enabled = true;
+            this.TxtEmployeeName.Text = textInfo.ToTitleCase(this.TxtEmployeeName.Text);
+            this.TxtEmployeeName.Select(this.TxtEmployeeName.Text.Length, this.TxtEmployeeName.Text.Length - 1);
+            this.BtnSave.Enabled = true;
         }
     }
 }

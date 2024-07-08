@@ -33,7 +33,7 @@ namespace CRUDWinFormsMVP.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.EmployeeTabControl = new System.Windows.Forms.TabControl();
-            this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.TabPageEmployeeList = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.LblSearchEmployee = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -41,27 +41,27 @@ namespace CRUDWinFormsMVP.Views
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.TabPageEmployeeDetail = new System.Windows.Forms.TabPage();
             this.LblNameMsgError = new System.Windows.Forms.Label();
-            this.comboBoxGender = new System.Windows.Forms.ComboBox();
-            this.comboBoxEducation = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGender = new System.Windows.Forms.ComboBox();
+            this.ComboBoxEducation = new System.Windows.Forms.ComboBox();
             this.LblEducation = new System.Windows.Forms.Label();
-            this.dtpCustomerDOB = new System.Windows.Forms.DateTimePicker();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCustomerId = new System.Windows.Forms.TextBox();
+            this.DtpEmployeeDOB = new System.Windows.Forms.DateTimePicker();
+            this.LblDateOfBirth = new System.Windows.Forms.Label();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.LblGender = new System.Windows.Forms.Label();
+            this.LblName = new System.Windows.Forms.Label();
+            this.TxtEmployeeName = new System.Windows.Forms.TextBox();
+            this.LblID = new System.Windows.Forms.Label();
+            this.TxtEmployeeId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCustomerOccupation = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.EmployeeTabControl.SuspendLayout();
-            this.tabPagePetList.SuspendLayout();
+            this.TabPageEmployeeList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.tabPagePetDetail.SuspendLayout();
+            this.TabPageEmployeeDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // LbLEmployeesTitle
@@ -99,8 +99,8 @@ namespace CRUDWinFormsMVP.Views
             // 
             // EmployeeTabControl
             // 
-            this.EmployeeTabControl.Controls.Add(this.tabPagePetList);
-            this.EmployeeTabControl.Controls.Add(this.tabPagePetDetail);
+            this.EmployeeTabControl.Controls.Add(this.TabPageEmployeeList);
+            this.EmployeeTabControl.Controls.Add(this.TabPageEmployeeDetail);
             this.EmployeeTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeTabControl.Location = new System.Drawing.Point(0, 56);
             this.EmployeeTabControl.Name = "EmployeeTabControl";
@@ -108,23 +108,23 @@ namespace CRUDWinFormsMVP.Views
             this.EmployeeTabControl.Size = new System.Drawing.Size(892, 411);
             this.EmployeeTabControl.TabIndex = 2;
             // 
-            // tabPagePetList
+            // TabPageEmployeeList
             // 
-            this.tabPagePetList.Controls.Add(this.dataGridView);
-            this.tabPagePetList.Controls.Add(this.LblSearchEmployee);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
-            this.tabPagePetList.Controls.Add(this.btnEdit);
-            this.tabPagePetList.Controls.Add(this.btnAddNew);
-            this.tabPagePetList.Controls.Add(this.btnSearch);
-            this.tabPagePetList.Controls.Add(this.txtSearch);
-            this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetList.Location = new System.Drawing.Point(4, 29);
-            this.tabPagePetList.Name = "tabPagePetList";
-            this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetList.Size = new System.Drawing.Size(884, 378);
-            this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Employee list";
-            this.tabPagePetList.UseVisualStyleBackColor = true;
+            this.TabPageEmployeeList.Controls.Add(this.dataGridView);
+            this.TabPageEmployeeList.Controls.Add(this.LblSearchEmployee);
+            this.TabPageEmployeeList.Controls.Add(this.btnDelete);
+            this.TabPageEmployeeList.Controls.Add(this.btnEdit);
+            this.TabPageEmployeeList.Controls.Add(this.btnAddNew);
+            this.TabPageEmployeeList.Controls.Add(this.btnSearch);
+            this.TabPageEmployeeList.Controls.Add(this.txtSearch);
+            this.TabPageEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabPageEmployeeList.Location = new System.Drawing.Point(4, 29);
+            this.TabPageEmployeeList.Name = "TabPageEmployeeList";
+            this.TabPageEmployeeList.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageEmployeeList.Size = new System.Drawing.Size(884, 378);
+            this.TabPageEmployeeList.TabIndex = 0;
+            this.TabPageEmployeeList.Text = "Employee list";
+            this.TabPageEmployeeList.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
@@ -200,29 +200,29 @@ namespace CRUDWinFormsMVP.Views
             this.txtSearch.Size = new System.Drawing.Size(737, 26);
             this.txtSearch.TabIndex = 0;
             // 
-            // tabPagePetDetail
+            // TabPageEmployeeDetail
             // 
-            this.tabPagePetDetail.Controls.Add(this.LblNameMsgError);
-            this.tabPagePetDetail.Controls.Add(this.comboBoxGender);
-            this.tabPagePetDetail.Controls.Add(this.comboBoxEducation);
-            this.tabPagePetDetail.Controls.Add(this.LblEducation);
-            this.tabPagePetDetail.Controls.Add(this.dtpCustomerDOB);
-            this.tabPagePetDetail.Controls.Add(this.lblDateOfBirth);
-            this.tabPagePetDetail.Controls.Add(this.btnCancel);
-            this.tabPagePetDetail.Controls.Add(this.btnSave);
-            this.tabPagePetDetail.Controls.Add(this.lblGender);
-            this.tabPagePetDetail.Controls.Add(this.label4);
-            this.tabPagePetDetail.Controls.Add(this.txtCustomerName);
-            this.tabPagePetDetail.Controls.Add(this.label3);
-            this.tabPagePetDetail.Controls.Add(this.txtCustomerId);
-            this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
-            this.tabPagePetDetail.Name = "tabPagePetDetail";
-            this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetDetail.Size = new System.Drawing.Size(884, 378);
-            this.tabPagePetDetail.TabIndex = 1;
-            this.tabPagePetDetail.Text = "Employee detail";
-            this.tabPagePetDetail.UseVisualStyleBackColor = true;
+            this.TabPageEmployeeDetail.Controls.Add(this.LblNameMsgError);
+            this.TabPageEmployeeDetail.Controls.Add(this.ComboBoxGender);
+            this.TabPageEmployeeDetail.Controls.Add(this.ComboBoxEducation);
+            this.TabPageEmployeeDetail.Controls.Add(this.LblEducation);
+            this.TabPageEmployeeDetail.Controls.Add(this.DtpEmployeeDOB);
+            this.TabPageEmployeeDetail.Controls.Add(this.LblDateOfBirth);
+            this.TabPageEmployeeDetail.Controls.Add(this.BtnCancel);
+            this.TabPageEmployeeDetail.Controls.Add(this.BtnSave);
+            this.TabPageEmployeeDetail.Controls.Add(this.LblGender);
+            this.TabPageEmployeeDetail.Controls.Add(this.LblName);
+            this.TabPageEmployeeDetail.Controls.Add(this.TxtEmployeeName);
+            this.TabPageEmployeeDetail.Controls.Add(this.LblID);
+            this.TabPageEmployeeDetail.Controls.Add(this.TxtEmployeeId);
+            this.TabPageEmployeeDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabPageEmployeeDetail.Location = new System.Drawing.Point(4, 29);
+            this.TabPageEmployeeDetail.Name = "TabPageEmployeeDetail";
+            this.TabPageEmployeeDetail.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageEmployeeDetail.Size = new System.Drawing.Size(884, 378);
+            this.TabPageEmployeeDetail.TabIndex = 1;
+            this.TabPageEmployeeDetail.Text = "Employee detail";
+            this.TabPageEmployeeDetail.UseVisualStyleBackColor = true;
             // 
             // LblNameMsgError
             // 
@@ -233,23 +233,23 @@ namespace CRUDWinFormsMVP.Views
             this.LblNameMsgError.Size = new System.Drawing.Size(0, 20);
             this.LblNameMsgError.TabIndex = 21;
             // 
-            // comboBoxGender
+            // ComboBoxGender
             // 
-            this.comboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxGender.FormattingEnabled = true;
-            this.comboBoxGender.Location = new System.Drawing.Point(63, 199);
-            this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(183, 28);
-            this.comboBoxGender.TabIndex = 20;
+            this.ComboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxGender.FormattingEnabled = true;
+            this.ComboBoxGender.Location = new System.Drawing.Point(63, 199);
+            this.ComboBoxGender.Name = "ComboBoxGender";
+            this.ComboBoxGender.Size = new System.Drawing.Size(183, 28);
+            this.ComboBoxGender.TabIndex = 20;
             // 
-            // comboBoxEducation
+            // ComboBoxEducation
             // 
-            this.comboBoxEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEducation.FormattingEnabled = true;
-            this.comboBoxEducation.Location = new System.Drawing.Point(260, 199);
-            this.comboBoxEducation.Name = "comboBoxEducation";
-            this.comboBoxEducation.Size = new System.Drawing.Size(183, 28);
-            this.comboBoxEducation.TabIndex = 19;
+            this.ComboBoxEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxEducation.FormattingEnabled = true;
+            this.ComboBoxEducation.Location = new System.Drawing.Point(260, 199);
+            this.ComboBoxEducation.Name = "ComboBoxEducation";
+            this.ComboBoxEducation.Size = new System.Drawing.Size(183, 28);
+            this.ComboBoxEducation.TabIndex = 19;
             // 
             // LblEducation
             // 
@@ -261,88 +261,88 @@ namespace CRUDWinFormsMVP.Views
             this.LblEducation.TabIndex = 18;
             this.LblEducation.Text = "Education:";
             // 
-            // dtpCustomerDOB
+            // DtpEmployeeDOB
             // 
-            this.dtpCustomerDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCustomerDOB.Location = new System.Drawing.Point(264, 54);
-            this.dtpCustomerDOB.Name = "dtpCustomerDOB";
-            this.dtpCustomerDOB.Size = new System.Drawing.Size(286, 26);
-            this.dtpCustomerDOB.TabIndex = 17;
+            this.DtpEmployeeDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpEmployeeDOB.Location = new System.Drawing.Point(264, 54);
+            this.DtpEmployeeDOB.Name = "DtpEmployeeDOB";
+            this.DtpEmployeeDOB.Size = new System.Drawing.Size(286, 26);
+            this.DtpEmployeeDOB.TabIndex = 17;
             // 
-            // lblDateOfBirth
+            // LblDateOfBirth
             // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(260, 31);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(106, 20);
-            this.lblDateOfBirth.TabIndex = 16;
-            this.lblDateOfBirth.Text = "Date Of Birth:";
+            this.LblDateOfBirth.AutoSize = true;
+            this.LblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDateOfBirth.Location = new System.Drawing.Point(260, 31);
+            this.LblDateOfBirth.Name = "LblDateOfBirth";
+            this.LblDateOfBirth.Size = new System.Drawing.Size(106, 20);
+            this.LblDateOfBirth.TabIndex = 16;
+            this.LblDateOfBirth.Text = "Date Of Birth:";
             // 
-            // btnCancel
+            // BtnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(260, 247);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(183, 44);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Location = new System.Drawing.Point(260, 247);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(183, 44);
+            this.BtnCancel.TabIndex = 15;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // BtnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(63, 247);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(183, 44);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Location = new System.Drawing.Point(63, 247);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(183, 44);
+            this.BtnSave.TabIndex = 14;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
             // 
-            // lblGender
+            // LblGender
             // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(59, 175);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(67, 20);
-            this.lblGender.TabIndex = 13;
-            this.lblGender.Text = "Gender:";
+            this.LblGender.AutoSize = true;
+            this.LblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblGender.Location = new System.Drawing.Point(59, 175);
+            this.LblGender.Name = "LblGender";
+            this.LblGender.Size = new System.Drawing.Size(67, 20);
+            this.LblGender.TabIndex = 13;
+            this.LblGender.Text = "Gender:";
             // 
-            // label4
+            // LblName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Name:";
+            this.LblName.AutoSize = true;
+            this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblName.Location = new System.Drawing.Point(59, 102);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(55, 20);
+            this.LblName.TabIndex = 9;
+            this.LblName.Text = "Name:";
             // 
-            // txtCustomerName
+            // TxtEmployeeName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(63, 125);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(183, 29);
-            this.txtCustomerName.TabIndex = 8;
-            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
+            this.TxtEmployeeName.Location = new System.Drawing.Point(63, 125);
+            this.TxtEmployeeName.Name = "TxtEmployeeName";
+            this.TxtEmployeeName.Size = new System.Drawing.Size(183, 29);
+            this.TxtEmployeeName.TabIndex = 8;
+            this.TxtEmployeeName.TextChanged += new System.EventHandler(this.TxtEmployeeName_TextChanged);
             // 
-            // label3
+            // LblID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "ID:";
+            this.LblID.AutoSize = true;
+            this.LblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblID.Location = new System.Drawing.Point(59, 31);
+            this.LblID.Name = "LblID";
+            this.LblID.Size = new System.Drawing.Size(30, 20);
+            this.LblID.TabIndex = 7;
+            this.LblID.Text = "ID:";
             // 
-            // txtCustomerId
+            // TxtEmployeeId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(63, 54);
-            this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.ReadOnly = true;
-            this.txtCustomerId.Size = new System.Drawing.Size(154, 29);
-            this.txtCustomerId.TabIndex = 6;
-            this.txtCustomerId.Text = "0";
+            this.TxtEmployeeId.Location = new System.Drawing.Point(63, 54);
+            this.TxtEmployeeId.Name = "TxtEmployeeId";
+            this.TxtEmployeeId.ReadOnly = true;
+            this.TxtEmployeeId.Size = new System.Drawing.Size(154, 29);
+            this.TxtEmployeeId.TabIndex = 6;
+            this.TxtEmployeeId.Text = "0";
             // 
             // label5
             // 
@@ -372,11 +372,11 @@ namespace CRUDWinFormsMVP.Views
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.EmployeeTabControl.ResumeLayout(false);
-            this.tabPagePetList.ResumeLayout(false);
-            this.tabPagePetList.PerformLayout();
+            this.TabPageEmployeeList.ResumeLayout(false);
+            this.TabPageEmployeeList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.tabPagePetDetail.ResumeLayout(false);
-            this.tabPagePetDetail.PerformLayout();
+            this.TabPageEmployeeDetail.ResumeLayout(false);
+            this.TabPageEmployeeDetail.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,32 +386,32 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Label LbLEmployeesTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl EmployeeTabControl;
-        private System.Windows.Forms.TabPage tabPagePetList;
+        private System.Windows.Forms.TabPage TabPageEmployeeList;
         private System.Windows.Forms.Label LblSearchEmployee;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.TabPage tabPagePetDetail;
+        private System.Windows.Forms.TabPage TabPageEmployeeDetail;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Label lblCustomerOccupation;
         private System.Windows.Forms.TextBox txtCustomerOccupation;
-        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label LblGender;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker txtCustomerDateOfBirth;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCustomerName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCustomerId;
+        private System.Windows.Forms.Label LblName;
+        private System.Windows.Forms.TextBox TxtEmployeeName;
+        private System.Windows.Forms.Label LblID;
+        private System.Windows.Forms.TextBox TxtEmployeeId;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.DateTimePicker dtpCustomerDOB;
-        private System.Windows.Forms.ComboBox comboBoxEducation;
+        private System.Windows.Forms.Label LblDateOfBirth;
+        private System.Windows.Forms.DateTimePicker DtpEmployeeDOB;
+        private System.Windows.Forms.ComboBox ComboBoxEducation;
         private System.Windows.Forms.Label LblEducation;
-        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.ComboBox ComboBoxGender;
         private System.Windows.Forms.Label LblNameMsgError;
     }
 }
